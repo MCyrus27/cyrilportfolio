@@ -74,10 +74,10 @@ body, html {
     max-width: 350px;
     min-height: 450px;
     margin: 0 auto;
-    border: 2px solid #ddd;
+    border: none; /* Changed from 2px solid #ddd to none */
     outline: none;
     box-sizing: border-box;
-    cursor: pointer; /* Ensures pointer cursor on hover */
+    cursor: pointer;
 }
 
 /* Hover Effect to Reveal Full Image */
