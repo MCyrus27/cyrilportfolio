@@ -65,7 +65,7 @@ body, html {
     justify-content: space-between;
     border-radius: 10px;
     padding: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     position: relative;
@@ -74,7 +74,7 @@ body, html {
     max-width: 350px;
     min-height: 450px;
     margin: 0 auto;
-    border: none;
+    border: 2px solid #ddd;
     outline: none;
     box-sizing: border-box;
     cursor: pointer; /* Ensures pointer cursor on hover */
