@@ -1,0 +1,243 @@
+:root {
+    --primary-color: #00C2CB;
+    --secondary-color: #6200EA;
+    --accent-color: #FF007F;
+    --text-color: #FFFFFF;
+    --background-color: #000000;
+}
+
+/* Global Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    background-image: url('your-image.jpg'), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)); 
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+/* Navbar */
+.navbar {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: color 0.3s, background-color 0.3s, border-radius 0.3s;
+    border-radius: 5px;
+}
+
+.navbar .nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Navbar expanded styles */
+.navbar-expanded .carousel {
+    transform: translateY(120px);
+    transition: transform 0.3s;
+}
+
+.navbar-expanded .carousel-thumbnails {
+    transform: translateY(30px);
+    transition: transform 0.3s;
+}
+
+/* Button Styling */
+button.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+button.btn-primary:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Styling */
+.carousel {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-item img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* Carousel Caption */
+.carousel-caption {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.carousel-caption p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.carousel-caption button {
+    margin-right: 10px;
+}
+
+/* Thumbnails */
+.carousel-thumbnails {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 15px;
+    z-index: 100;
+    flex-wrap: nowrap;  /* Keeps them in a single row by default */
+    overflow-x: auto;
+    padding-bottom: 10px;
+    transition: bottom 0.3s, transform 0.3s;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.thumbnail {
+    display: inline-block;
+    width: 120px;
+    height: 160px;
+    background-size: cover;
+    margin-right: 10px;
+    flex: 0 0 auto;
+    object-fit: cover;
+    border: 5px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transform-origin: top center;
+    transition: transform 0.3s, border-color 0.3s, opacity 0.3s, ease;
+    opacity: 0.8;
+}
+
+.thumbnail.active, .thumbnail:hover {
+    transform: scale(1.05); /* Slight zoom in */
+    opacity: 1;
+    border-color: var(--primary-color);
+}
+
+
+
+/* Thumbnail Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05); /* Slight zoom effect */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.thumbnail:hover {
+    animation: pulse 1s infinite; /* Pulsing effect */
+}
+.thumbnail:nth-child(1) { animation-delay: 0.3s; }
+.thumbnail:nth-child(2) { animation-delay: 0.6s; }
+.thumbnail:nth-child(3) { animation-delay: 0.9s; }
+.thumbnail:nth-child(4) { animation-delay: 1.2s; }
+.thumbnail:nth-child(5) { animation-delay: 1.5s; }
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .carousel-thumbnails {
+          /* Allow thumbnails to wrap on mobile */
+        justify-content: center;  /* Center the thumbnails */
+    }
+    .thumbnail {
+        width: 200px;
+        height: 250px;
+    }
+
+    .carousel-thumbnails {
+        bottom: 90px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .thumbnail {
+        width: 250px;
+        height: 300px;
+    }
+
+    .carousel-thumbnails {
+        bottom: 110px;
+    }
+}
+
+/* Large Screens */
+@media (min-width: 1024px) {
+    .thumbnail {
+        width: 300px;
+        height: 350px;
+    }
+
+    .carousel-thumbnails {
+        bottom: 140px;
+    }
+}
+
+/* Footer */
+footer {
+    padding: 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 20px;
+}

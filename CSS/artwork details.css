@@ -1,0 +1,102 @@
+:root {
+    --primary-color: #00C2CB;
+    --secondary-color: #6200EA;
+    --accent-color: #FF007F;
+    --text-color: #FFFFFF;
+    --background-color: #000000;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    padding-top: 70px;
+}
+
+.navbar {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+    text-transform: uppercase; /* Optional: Makes the text uppercase */
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+    border-radius: 5px; /* Optional: Add rounded corners on hover */
+}
+
+.navbar .nav-link:hover {
+    color: var(--primary-color); /* Highlight color on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Light transparent background */
+}
+
+/* Art Card Styling */
+.art-card {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto; /* Center the art card */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Artwork Image Styling */
+.art-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border: 3px solid var(--primary-color);
+}
+
+/* Carousel Caption Styling */
+.carousel-caption {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInText 1.5s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    /* Reduce the size of the artwork and art card */
+    .carousel-item {
+        height: auto; /* Allow height to adjust based on content */
+    }
+
+    .art-card {
+        max-width: 400px; /* Reduce max width of the art card */
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .art-image {
+        max-width: 100%; /* Keep image width responsive */
+        height: auto;
+    }
+
+    /* Reduce font size of the title and description */
+    .carousel-caption h2 {
+        font-size: 1.5em; /* Smaller title */
+    }
+
+    .carousel-caption p {
+        font-size: 1em; /* Smaller description text */
+    }
+
+    /* Optionally, adjust the padding and margins for smaller screens */
+    .carousel-caption {
+        padding: 10px;
+    }
+}

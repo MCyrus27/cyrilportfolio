@@ -1,0 +1,203 @@
+:root {
+    --primary-color: #00C2CB;
+    --secondary-color: #6200EA;
+    --accent-color: #FF007F;
+    --text-color: #ffffff;
+    --background-color: #000000;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    background-image: url('your-image.jpg'), linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+.navbar {
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .navbar-brand img {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-radius 0.3s ease;
+    border-radius: 5px;
+}
+
+.navbar .nav-link:hover {
+    color: var(--primary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Portfolio Title Styling */
+.title {
+    text-align: center;
+    color: var(--primary-color) !important;
+    font-size: 2.5em;
+    margin-top: 60px; /* Add or adjust this value to move the title lower */
+    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Art Frame Styling */
+.art-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+    min-height: 450px;
+    margin: 0 auto;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    cursor: pointer; /* Ensures pointer cursor on hover */
+}
+
+/* Hover Effect to Reveal Full Image */
+.art-frame:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6); /* More shadow on hover */
+}
+
+/* Image Styling */
+.art-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, object-fit 0.3s ease;
+    max-height: 250px;
+    object-fit: cover;
+    border: none;
+    outline: none;
+}
+
+/* On Hover, Reveal the Full Image */
+.art-frame:hover img {
+    transform: scale(1.2); /* Slightly enlarge the image */
+    object-fit: contain; /* Adjust to ensure the image fits fully */
+    max-height: none; /* Allow the image to expand beyond the max height */
+}
+
+/* Ensure the card title is properly aligned */
+.art-frame .card-body h5 {
+    color: var(--text-color);
+    font-size: 1.2em;
+}
+.art-frame .card-body {
+    padding: 10px; /* Adjust padding if needed */
+}
+
+.art-frame .card-body .card-title {
+    font-size: 1.2rem; /* Adjust title size */
+    margin-bottom: 5px; /* Less space between title and description */
+}
+
+.art-frame .card-body .card-description, 
+.art-frame .card-body .card-date {
+    font-size: 1rem;
+    margin-bottom: 3px; /* Tight space between description and date */
+    color: #555; /* Optional: makes text slightly darker */
+}
+
+/* Hover effect */
+.art-frame:hover {
+    transform: scale(1.05); /* Slightly larger on hover */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.art-frame img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.art-frame:hover img {
+    transform: scale(1.1);
+}
+
+/* Art Details Styling */
+.art-details {
+    padding: 10px 0;
+}
+
+.art-details h3 {
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+.art-details p {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+/* Ensure no border or padding issues */
+.art-frame, .art-frame img {
+    box-sizing: border-box; /* Includes padding and border within the element's total width/height */
+}
+
+
+/* Card Body Styling */
+.card-body {
+    padding: 10px;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+
+@media (min-width: 768px) {
+    /* 2 columns for tablets and medium screens */
+    .row {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (min-width: 992px) {
+    /* 3 columns for large screens */
+    .row {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (min-width: 1200px) {
+    /* 4 columns for extra large screens */
+    .row {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+/* Footer Styling */
+footer {
+    padding: 1rem;
+    background-color: transparent;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 40px;
+}
